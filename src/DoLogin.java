@@ -28,15 +28,19 @@ public class DoLogin extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		String userName = request.getParameter("userName");
 		String passwd = request.getParameter("passwd");
 		
 		PrintWriter out = response.getWriter();
-		String htmlResponse = "<html>";
-		htmlResponse+= "<h2>User Name is " + userName + "<br/>";
-		htmlResponse+= "Password is " + passwd + "<br/></h2></html>";
-		out.println(htmlResponse);
+		StringBuilder msg = new StringBuilder();
+		
+		msg.append("<html>");
+		msg.append("<h2>User Name is ");
+		msg.append(userName);
+		msg.append("<br/>Password is ");
+		msg.append(passwd);
+		msg.append("<br/></h2></html>");
+		out.println(msg.toString());
 	}
 
 }

@@ -28,13 +28,14 @@ public class DoSeekUser extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
-		String msg = "<html>";
-		msg+= "<h1>Do you forget id? stupid!</h1><br/>";
-		msg+="NO WORRIES";
-		msg+="</html>";
-		out.println(msg);
+		StringBuilder msg = new StringBuilder();
+		
+		msg.append("<html>");
+		msg.append("<h1>Do you forget id? stupid!</h1><br/>");
+		msg.append("NO WORRIES");
+		msg.append("</html>");
+		out.println(msg.toString());
 	}
 
 }
